@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>typing.js demo</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../typing.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="../typing.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="source" style="display: none;">
+          public static <span style="color: brown;">ZegoExpressEngine</span> create Engine(); //<span style="color:orange;">初始化引擎</span><br />
+          public <span style="color: brown;">void loginRoom</span> (String roomID,ZegoUser User); //<span style="color:orange;">登录房间</span><br />
+          public <span style="color: brown;">void startPublishingStream</span>(String SteamID); //<span style="color:orange;">推流</span><br />
+          public <span style="color: brown;">void startPublishingStream</span>(String streamID,@Nullable ZegoCanvas canvas);//<span style="color:orange;">拉流</span><br />
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id="output-wrap">
+          <span id="output"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var typing = new Typing({
+      source: document.getElementById('source'),
+      output: document.getElementById('output'),
+      delay: 120,
+      done: function() {
+        console.log("打字效果完成");
+        typing.pause();
+      }
+    });
+    typing.start();
+  </script>
+</body>
+</html>
